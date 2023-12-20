@@ -1,0 +1,33 @@
+<html>
+<body>
+<script language="javascript">
+n=prompt("Enter a Number");
+st="";
+while(n>0)
+{
+	r=parseInt(n%10);
+	switch(r)
+	{ 
+		case 0:	st="ZERO"+" "+st;
+			break;
+		case 1:	st="ONE"+" "+st;
+			break;
+		case 2:	st="TWO"+" "+st;
+			break;
+		case 3:	st="THREE"+" "+st;
+			break;
+		case 4:	st="FOUR"+" "+st;
+			break;
+		case 5:	st="FIVE"+" "+st;
+			break;
+		case 6:	st="SIX"+" "+st;
+			break;
+		case 7:	st="SEVEN"+" "+st;
+			break;
+	}
+	n=parseInt(n/10);
+}
+document.write(st);
+</script>
+</body>
+</html>

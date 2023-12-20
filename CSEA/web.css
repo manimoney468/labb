@@ -1,0 +1,69 @@
+.justify
+{
+color:brown;
+font-size:large;
+text-transform:capitalize;
+text-align:justify;
+font-weight:200;
+letter-spacing:-3;
+word-spacing:5;	
+}
+h1
+{
+color:red;
+font-size:large;
+text-transform:uppercase;
+text-align:center;
+text-decoration:underline;
+}
+body
+{
+background-image:url('book1.jpg');
+background-repeat:no-repeat;
+background-attachment:fixed;
+background-color:olive;
+}
+a:link
+{
+color:red;
+font-family:tahoma;
+font-size:12pt;
+}
+a:visited
+{
+color:pink;
+font-family:calibri;
+font-size:20pt;
+text-decoration:underline;
+}
+a:active
+{
+color:orange;
+font-family:cambria;
+font-size:20pt;
+}
+a:hover
+{
+color:pink;
+font-family:Brush Script MT;
+font-size:22pt;
+text-decoration:overline;
+}
+.auto {cursor: auto;}
+  table
+  {
+     border-collapse: collapse;
+     width: 100%;
+  }
+  th, td 
+  {
+     text-align: left;
+     padding: 8px;
+  }
+  tr:nth-child(even){background-color:pink}
+  th 
+  {
+     background-color:pink;
+     color: white;
+  }
+

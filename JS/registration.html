@@ -1,0 +1,168 @@
+<html>
+<head>
+<center>
+<form name="regfrm" method="post" width="80%" height="10" onsubmit="return validate()" action="success1.html">
+<table border="8" cellpadding="0" cellspacing="0" >
+ <caption>Personal Registration Form</caption>
+<tr>
+<td >Firstname</td>
+<td><input type="text" name="fname" pattern="[a-zA-Z0-9 ]{6,}" ></td>
+</tr>
+
+<tr>
+<td >Lastname</td>
+<td ><input type="text" name="lname"  pattern="[a-zA-Z0-9 ]{6,}"></td>
+</tr>
+
+<tr>
+<td >Branch</td>
+<td  >
+<select size="1" name="branch" >
+<option value>choose..</option>
+<option value="CE">CIVIL</option>
+<option value="EEE">EEE</option>
+<option value="ME">ME</option>
+<option value="ECE">ECE</option>
+<option value="CSE">CSE</option>
+<option value="IT">IT</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td >DOB</td>
+<td ><input type="date" name="dob" ></td>
+</tr>
+
+<tr>
+<td >Email-id</td>
+<td ><input type="text" name="eid"  pattern="[a-zA-Z0-9 ]+@[a-zA-Z0-9 ]+\.[a-zA-Z]{2,4}"></td>
+</tr>
+
+
+
+<tr>
+<td >Organization</td>
+<td ><input type="text" name="org" pattern="[a-zA-Z0-9 ]{3,}" ></td>
+</tr>
+
+<tr>
+<td >Address</td>
+<td>
+<textarea rows="2" cols="16"></textarea>
+</td>
+</tr>
+
+<tr>
+<td >Town/City/Village</td>
+<td ><input type="text" name="city"  pattern="[a-zA-Z0-9 ]{3,}"></td>
+</tr>
+
+<tr>
+<td >State</td>
+<td >
+<select size="1" name="State" >
+<option value>Choose..</option>
+<option value="AP">ANDHRA PRADESH</option>
+<option value="TE">TELGANA</option>
+<option value="UP">UTHRA PRADESH</option>
+<option value="MP">MP</option>
+<option value="KE">KERALA</option>
+</select></font>
+</td>
+</tr>
+
+<tr>
+<td >Country</td>
+<td >
+<select size="1" name="country" >
+<option value>Choose..</option>
+<option value="IND">INDIA</option>
+<option value="US">AMERICA</option>
+<option value="JPN">JAPAN</option>
+<option value="AUS">AUSTRALIA</option>
+<option value="FRN">FRANCE</option>
+</select></font>
+</td>
+</tr>
+
+<tr>
+<td >zip/Postalcode</td>
+<td ><input type="text" name="zip" pattern="[0-9 ]{6}" ></td>
+</tr>
+<tr>
+<td >Phonenumber</td>
+<td ><input type="text" name="pn"  pattern="[0-9 ]{10}"></td>
+</tr>
+</table>
+
+<p align="center"><font face="timesnewroman" color="bluishgreen">
+<input type="radio" name="submit" required>
+I agree terms and Conditions<br>
+<input type="submit" value="submit"  >
+<input type="reset" value="cancel" >
+</p>
+ </form>
+</center>
+<script type="text/javascript" language="javascript">
+function validate()
+{
+var fname=document.regfrm.fname.value;
+var lname=document.regfrm.lname.value;
+var curdate=new Date();
+var dob=new Date(document.regfrm.dob.value);
+var eid=document.regfrm.eid.value;
+var org=document.regfrm.org.value;
+var city=document.regfrm.city.value;
+var zip=document.regfrm.zip.value;
+var pn=document.regfrm.pn.value;
+
+if(fname=="" || fname=="null")
+{
+alert("Your Enter First Name Valid Format");
+return false;
+}
+
+if(lname=="" || lname=="null")
+{
+alert("Your Enter Last Name Valid Format");
+return false;
+}
+
+if(dob>curdate)
+{
+alert("Your Enter DOB Valid Format");
+return false;
+}
+if(eid=="" || eid=="null")
+{
+alert("Your Enter E-Mail-Id Valid Format");
+return false;
+}
+
+if(org=="" || org=="null")
+{
+alert("Your Enter organization Valid Format");
+return false;
+}
+
+if(city=="" || city=="null")
+{
+alert("Your Enter City Valid Format");
+return false;
+}
+
+if(zip=="" || zip=="null")
+{
+alert("Your Enter Zip-Code Valid Format");
+return false;
+}
+
+if(pn=="" || pn=="null")
+{
+alert("Your Enter Mobile Number Valid Format");
+return false;
+}
+
+}
+

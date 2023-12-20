@@ -1,0 +1,98 @@
+<script>
+function regvalidate()
+{ 
+ user=document.f1.usr.value;
+  pswd=f1.ps.value;
+ cpswd=f1.cps.value;
+ mobile=f1.phn.value;
+DoB=document.getElementById("db").value;
+  if(user=="")
+	{
+	alert("please enter username");
+	return false;
+	}
+ else if(pswd=="")
+ {
+   alert("password should not be null");
+	return false;
+ }
+else if(cpswd=="")
+ {
+   alert("please enter confirm password");
+	return false;
+ }
+else if(pswd!=cpswd)
+ {
+  alert("password and confirm password shuld be same");
+  return false;
+}
+ else if(f1.m.checked==false && f1.f.checked==false)
+{
+ alert("please select your gender");
+return false;
+}
+else if(f1.t.checked==false && f1.e.checked==false && f1.h.checked==false)
+{
+ alert("please select lang");
+return false;
+}
+else if(isNaN(mobile)==true)
+{
+	alert("Enter Valid Phone Number");
+	return false;
+}
+else if(mobile.length<10 || mobile.length>10)
+{
+	alert("Phone Number Should be Of 10 Numbers");
+ 	return false;
+}
+else if(DoB.selectedIndex==0)
+{
+	alert("select your date of birth");
+ 	return false;
+}
+else if(f1.branch.selectedIndex==0)
+{
+	alert("Select your branch");
+	return false;
+}
+else if(f1.addr.value=="")
+{
+	alert("Select your branch");
+	return false;
+}
+else
+  return true;
+}
+</script>
+<H1 align="center">REGIATRATION FORM</H1>
+<table align="center">
+<form name="f1" onsubmit="return regvalidate()" action="success.html">
+<tr><td>username:</td><td><input type="text" name="usr"></td></tr>
+<tr><td>Password:</td><td><input type="password" name="ps"></td></tr>
+<tr><td>Confirm Password:</td>
+	<td><input type="password" name="cps" id="cps"></td></tr>
+<tr><td>gender:</td><td>
+  <input  type="radio" id="m" name="g">Male<br>
+  <input  type="radio" id="f" name="g">Female</td></tr>
+<tr><td>Select your languages:</td><td>
+  <input type="checkbox" name="t" >TELUGU<br>
+  <input type="checkbox" name="e" >ENGLISH<br>
+  <input type="checkbox" name="h" >HINDI</td></tr>
+<tr><td>MobileNumber:</td><td><input type="text" name="phn"></td></tr>
+<tr><td>Date of Birth:</td><td><input type="date" name="db" id="db" required></td></tr>
+<tr><td>Select your branch:</td>
+	<td><select name="branch"><option></option>
+	<option>CSE</option><option>AIDS</option>
+	<option>AIML</option><option>IoT</option><option>MECH</option> 
+	<option>ECE</option><option>EEE</option></td></tr>
+<tr><td>Address:</td>
+	<td><textarea name="addr" rows="5" cols="25" ></textarea></td></tr>
+
+<tr><td>Upload your photo:</td><td><input type="file" required></td></tr>
+<tr><td colspan="2"><input type="radio" required>
+	<font color="red">* A agree all the terms and Conditions</font></td></tr>
+<tr><td><input type="submit" value="submit"></td>
+<td><input type="reset" value="clear"></td></tr>
+</form>
+</table>

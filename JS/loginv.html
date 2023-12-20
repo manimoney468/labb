@@ -1,0 +1,41 @@
+<html>
+<script>
+function validate()
+{
+un=document.f1.un.value;
+ps=document.f1.pswd.value;
+if(un==""|| un=="null")
+{
+ alert("Username should not be empty");
+ return false;
+ }
+if(ps=="")
+{
+ alert("passwornd should not be empty");
+ return false;
+}
+if(ps.length<=8){
+alert("Password must be moe than 8 character");
+return false;
+}
+else 
+ return true;
+}
+</script>
+<body bgcolor="yellow" text="red">
+<form name="f1" method="post" onsubmit="confirm('Are you sure to submit')" action="success.html">
+<h1>
+<table align="center">
+<tr><th style="color:blue;" colspan="2">LOGIN FORM</th></tr>
+<tr><th>UserName:</th>
+	<td><input type="text" name="un" required></td></tr>
+<tr><th>Password:</th><td><input type="password" name="pswd"></td></tr>
+<tr><th>Mobile Number:</th><td><input type="text" required pattern="[0-9]{10}"></td></tr>
+<tr>
+<th><input type="submit" value="Login" onclick="return validate()"></th>
+<th><input type="reset" value="Clear"></th></tr>
+</table>
+</h1>
+</form>
+</body>
+</html>

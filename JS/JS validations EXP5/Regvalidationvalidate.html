@@ -1,0 +1,119 @@
+<html>
+<script>
+function validateReg()
+{
+un=document.reg.fname.value;
+ln=document.reg.lname.value;
+ps=document.reg.pswd.value;
+cps=document.reg.cpswd.value;
+phone=document.reg.phn.value;
+var name=/^[A-Z][a-zA-Z0-9 ]{6,20}$/;
+var psw=/^[a-zA-Z][a-zA-Z0-9$@#/ ]{6,20}$/;
+
+if(un==""|| un=="null")
+{
+ alert("Firstname should not be empty");
+ return false;
+ }
+if(name.test(un)==false)
+{
+	alert('please provide valide format for specified pattern');
+	document.getElementById("message").innerHTML="Name must starts with capital letter";
+	return false;
+  }
+if(ln==""||ln=="null")
+{
+ alert("Last name should not be empty");
+ return false;
+ }
+if(ps=="")
+{
+     document.getElementById("msg").innerHTML="**Fill the password please!";
+     return false;
+}
+if(ps.length<=8)
+{
+alert("Password must be moe than 8 character");
+return false;
+}
+if(psw.test(ps)==false)
+{
+	alert('please provide valide format for specified pattern');
+	return false;
+  }
+if(cps=="")
+{
+alert("Please enter confim password");
+return false;
+}if(ps!=cps)
+{
+alert("Confirm Password and Password must be same");
+return false;
+}
+if(isNaN(phone))
+{  
+  document.getElementById("myphone").innerHTML="Enter 10 Numeric value only";  
+  return false;
+}
+else 
+ return true;
+}
+</script>
+<body bgcolor="#552244" text="red" style="font-size:30px;">
+<form name="reg" method="post" onsubmit="confirm('Are you sure to submit')" action="success.html">
+<h1>
+<table align="center">
+<tr><th style="color:blue;" colspan="2">REGISTRATION FORM</th></tr>
+<tr><th>First Name:</th>
+	<td><input type="text" name="fname" required><span id="message" style="color:red"/></td></tr>
+<tr><th>Last Name:</th>
+	<td><input type="text" name="lname" required pattern="[A-Z|a-z]{6,}"></td></tr>
+<tr><th>Password:</th><td><input type="password" name="pswd">
+<span id="msg" style="color:red"> </span></td></tr>
+<tr><th>Confirm Password:</th><td><input type="password" name="cpswd"></td></tr>
+<tr><th>Mobile Number:</th><td><input type="text" name="phn" required pattern="[0-9]{10}">
+	<span id="myphone" style="color:red;"/></td></tr>
+<tr><td>DOB</td><td><input type="date" name="dob" ></td></tr>
+<tr>
+<td>Email-id</td>
+<td><input type="text" name="eid"  pattern="[a-zA-Z0-9]+@[a-zA-Z0-9 ]+\.[a-zA-Z]{2,3}"></td>
+</tr>
+<tr>
+<td>Organization</td>
+<td><input type="text" name="org" pattern="[a-zA-Z0-9]{3,}" ></td>
+</tr>
+<tr><th>Branch</th><td></td></tr>
+<tr><td>Personal Address</td>
+<td><textarea rows="2" cols="16"></textarea></td>
+</tr>
+<tr>
+<td>Town/City/Village</td>
+<td><input type="text" name="city"  pattern="[a-zA-Z ]{3,}"></td>
+</tr>
+<tr>
+<td>State</td>
+<td>
+<select size="1" name="State" >
+<option value>Choose..</option>
+<option value="AP">ANDHRA PRADESH</option>
+<option value="TE">TELGANA</option>
+<option value="UP">UTHRA PRADESH</option>
+<option value="MP">MP</option>
+<option value="KE">KERALA</option>
+</select></font>
+</td>
+</tr>
+<tr>
+<td>zip/Postalcode</td>
+<td><input type="text" name="zip" pattern="[0-9 ]{6}" ></td>
+</tr>
+<tr>
+<th colspan="2" style="color:blue;"><input type="radio" name="submit" required>I agree terms and Conditions</th></tr>
+<tr>
+<th><input type="submit" value="Login" onclick="return validateReg()"></th>
+<th><input type="reset" value="Clear"></th></tr>
+</table>
+</h1>
+</form>
+</body>
+</html>

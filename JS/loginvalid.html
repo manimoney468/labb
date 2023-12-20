@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>Login form Validation</title>
+<form name="f1" method="post" onsubmit="return validate()" action="success.html">
+<table border="1">
+<caption>Login Form Validation</caption>
+
+<tr>
+<td>USER Name</td>
+<td><input type="text" name="un"</td>
+</tr>
+
+<tr>
+<td>Password</td>
+<td><input type="password" name="pwd"></td>
+</tr>
+
+<tr>
+<td><input type="submit" value="LOGIN"></td>
+<td><input type="reset" value="CANCEL"></td>
+</tr>
+</table>
+</form>
+</head>
+<script type="text/javascript"  language="javascript">
+function validate()
+{
+var un=document.f1.un.value;
+var pwd=document.f1.pwd.value;
+if(un=="" || un=="null")
+{
+alert("Please Provide User Name Correct format");
+return false;
+}
+if(pwd=="" || pwd=="null")
+{
+alert("Please Provide Password Correct format");
+return false;
+}
+
+if(un=="mani" || pwd=="jaahnavi")
+{
+return true;
+}
+else
+{
+alert("Please Provide User Name & Password Correct format");
+return false;
+}

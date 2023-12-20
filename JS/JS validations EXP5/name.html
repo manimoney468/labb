@@ -1,0 +1,33 @@
+	<html>
+		<head>
+			<title>RegExp-NameValidation</title>
+		<script>
+		function validate()
+		{
+		var p=/^[A-Z][a-zA-Z0-9 ]{6,20}$/;
+		var uname=document.f1.un.value;
+		if(uname==""||uname=="null")
+		{
+			alert('username should not be null');
+			return false;
+		}
+		if(p.test(uname)==false)
+		{
+		alert('please provide valide format for specified pattern');
+		document.getElementById("message").innerHTML="Name must starts with capital letter";
+		return false;
+		}
+		else
+		return true;
+		}
+		</script>
+		<body>
+		<table align="center">
+		<form name="f1" method="get" action="succ.html" onsubmit="return validate()">
+		<tr><td>Enter Your Name:<input type="text" name="un">
+			<span id="message" style="color:red"/></td></tr>
+		<tr><td><input type="submit" value="Click"></td></tr>
+		</form>
+		</table>
+		</body>
+		</html>

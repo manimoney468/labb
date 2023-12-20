@@ -1,0 +1,28 @@
+<%@page import="java.sql.*"%>
+
+<%
+try{
+	Class.forName("oracle.jdbc.driver.OracleDriver");
+	out.println("Class will loaded");
+Connection con=DriverManager.getConnection("jdbc:Oracle:thin:@localhost:1521:xe","SYSTEM","manager");
+out.println("<br> Oracle DataBase Connected");
+Statement st=con.createStatement();
+String un="balu1";
+String p="welcome1.";
+ResultSet rs=st.executeQuery("select * from USERS where (username="BALU" and pwd="WELCOME")");
+if(rs.next())
+{
+out.println("Login successfully");
+}
+else
+{
+	out.println("Failur");
+}
+rs.close();
+st.close();
+con.close();
+catch(Exception e)
+{
+	out.println(e);
+}
+%>

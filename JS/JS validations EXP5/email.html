@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>RegExp-NameValidation</title>
+		<script>
+		function validate()
+		{
+		var p=/[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
+		var mail=document.f1.mail.value;
+		if(mail==""||mail=="null")
+		{
+			alert('Please Provide valide Mail Format');
+			return false;
+		}
+		if(p.test(mail)==false)
+		{
+		alert('please provide valide format for specified pattern');
+		return false;
+		}
+		}
+		</script>
+		<body>
+		<form name="f1" method="get" action="succ.html" onsubmit="return validate()">
+		Enter Your email:<input type="text" name="mail"><br>
+		<input type="submit" value="Click">
+		</form>
+		</body>
+</html>

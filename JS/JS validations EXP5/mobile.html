@@ -1,0 +1,27 @@
+	<html>
+		<head>
+			<title>RegExp-NameValidation</title>
+		<script>
+		function validate()
+		{
+		var p=/^\d{10}$/;
+		var phone=document.f1.mn.value;
+		if(phone==""||phone=="null")
+		{
+			alert('Please Provide Mobile number');
+			return false;
+		}
+		if(p.test(phone)==false)
+		{
+		alert('please provide valide format for 10 Digits');
+		return false;
+		}
+		}
+		</script>
+		<body>
+		<form name="f1" method="get" action="succ.html" onsubmit="return validate()">
+		Enter Your Phone Number:<input type="number" name="mn"><br>
+		<input type="submit" value="Click">
+		</form>
+		</body>
+</html>
